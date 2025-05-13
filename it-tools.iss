@@ -54,7 +54,7 @@ Source: "Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Release\*.dll "; DestDir: "{app}"; Flags: ignoreversion
 Source: "Release\plugins\sqldrivers\*.dll"; DestDir: "{app}\plugins\sqldrivers"; Flags: ignoreversion
 Source: "Release\plugins\platforms\*.dll"; DestDir: "{app}\plugins\platforms"; Flags: ignoreversion
-;Source: "Release\resources\*.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "Release\resources\*.ico"; DestDir: "{app}"; Flags: ignoreversion
 
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
