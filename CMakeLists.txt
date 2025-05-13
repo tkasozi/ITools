@@ -73,6 +73,10 @@ add_custom_target(theme_icons ALL COMMAND
 # Add resources
 qt6_add_resources(ITools RESOURCES resources.qrc)
 
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E make_directory
+		"$<TARGET_FILE_DIR:${PROJECT_NAME}>/.data")
+
 if (CMAKE_BUILD_TYPE MATCHES "Release" AND WIN32)
 	foreach (QT_LIB Core Gui Widgets Sql Xml)
 		get_target_property(QT_BINARY_DIR Qt6::${QT_LIB} IMPORTED_LOCATION)

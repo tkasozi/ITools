@@ -64,7 +64,7 @@ static QList<FileObject *> findPreviouslyOpenedFiles() {
 }
 
 static bool db_conn() {
-	const char * dbName = "0a97fd39-aac6-463c-9b91-a3f8a7649ef0.db";
+	const char * dbName = ".data/itools.db";
 
 	std::fstream db(dbName, std::ios::in);
 
@@ -80,8 +80,9 @@ static bool db_conn() {
 		dbEngine.setDatabaseName(dbName);
 
 		if (!dbEngine.open()) {
-			QMessageBox::critical(nullptr, QObject::tr("Cannot open database"),
+			QMessageBox::critical(nullptr, QObject::tr("Cannot connect to the database"),
 								  "Unable to establish a database connection.\n"
+								  "Check if you permissions.\n"
 								  "Click Cancel to exit.", QMessageBox::Cancel);
 			return false;
 		}

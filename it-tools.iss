@@ -16,7 +16,7 @@
 AppId={{1F20B4C0-B5D4-4DCA-8F64-16107F4BF07C}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-;AppVerName={#MyAppName} {#MyAppVersion}
+;AppVerName={#MyAppName}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
@@ -47,15 +47,14 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Dirs]
-Name: "plugins\sqldrivers";
-Name: "plugins\platforms";
+Name: "{app}\.data";
 
 [Files]
 Source: "Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "Release\*.dll "; DestDir: "{app}"; Flags: ignoreversion
 Source: "Release\plugins\sqldrivers\*.dll"; DestDir: "{app}\plugins\sqldrivers"; Flags: ignoreversion
 Source: "Release\plugins\platforms\*.dll"; DestDir: "{app}\plugins\platforms"; Flags: ignoreversion
-Source: "Release\resources\*.ico"; DestDir: "{app}"; Flags: ignoreversion
+;Source: "Release\resources\*.ico"; DestDir: "{app}"; Flags: ignoreversion
 
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
