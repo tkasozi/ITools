@@ -14,14 +14,12 @@ on:
     # Example: Run every Sunday at 00:00 UTC
     - cron: '0 0 * * 0'
 
+permissions:
+    contents: write # To allow committing changes to the repository
+    actions: read   # Default, to read GITHUB_TOKEN
 jobs:
   generate-manifest:
     runs-on: ubuntu-latest
-
-    # Optional: Define permissions if you plan to commit the file back to this repository
-    # permissions:
-    // contents: write # To allow committing changes to the repository
-    #   actions: read   # Default, to read GITHUB_TOKEN
 
     steps:
       - name: Checkout repository (needed if committing manifest back)
